@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/* Objetivo: Crear una aplicación de lista de tareas (To-Do List) utilizando React.
+
+Requisitos:
+
+Agregar Tareas:
+
+El usuario debe poder agregar una nueva tarea.
+Cada tarea debe contener un texto descriptivo.
+Mostrar Tareas:
+
+Las tareas agregadas deben mostrarse en una lista.
+Cada tarea en la lista debe mostrar su texto descriptivo.
+Eliminar Tareas:
+
+El usuario debe poder eliminar cualquier tarea de la lista */
+
+import { useState } from "react";
+import React from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [task, setTask] = useState("");
+  const [tasks, setTasks] = useState([]);
+
+  const handleInputChange = (event) => {
+    const inputValue = event.target.value; //Obtenemos el valor del input que ha escrito la usuaria
+    setTask(inputValue); //Actualizar el estado task con el valor del input que ha escrito al usuaria
+  };
+
+  const handleSubmit = (event) => {
+    //Prevenir el comportamiento por defecto del formulario
+    event.preventDefault();
+    if (task !== "") {
+      //Agregar la tarea a la lista de tareas
+      setTasks([...tasks, task]);
+      //Limpiar el campo de entrada de agregar la tarea
+      setTask("");
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <h1>Lista de tareas</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Nueva tarea"
+          value={task}
+          onChange={handleInputChange}
+        ></input>
+        <button>Agregar</button>
+      </form>
+      <ul>
+        {
+          //Usamos map para iterar sobre cada tarea en tasks y devolver un array de elementos <li>
+          tasks.map((task, index) => (
+            //Renderizamos cada tarea como un elemento li con su contenido y una clave unica
+            <li key={index}>{task}</li>
+          ))
+        }
+      </ul>
+    </div>
+  );
 }
-
-export default App
+export default App;
