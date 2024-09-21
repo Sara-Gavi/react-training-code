@@ -1,42 +1,72 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* estilos generales*/
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+/*contenedor de la app*/
+
+.app {
   text-align: center;
+  padding: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/*estilos para el Header*/
+
+header {
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 2.5rem;
+  color: rgb(57, 57, 57);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/*estilos para el form */
+
+form {
+  margin: 20px 0;
 }
 
-.card {
-  padding: 2em;
+input {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-.read-the-docs {
-  color: #888;
+/*estilos para gallery */
+
+.image__gallery {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Estilo de cada tarjeta de imagen */
+.image__card {
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 200px; /* Ancho fijo */
+}
+
+/* Estilo de las imágenes */
+.image__card img {
+  width: 100%; /* Las imágenes ocupan el 100% del ancho de la tarjeta */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilo del título de cada imagen */
+.image__card h3 {
+  margin: 10px;
+  font-size: 1.2rem;
+  color: #333;
 }
