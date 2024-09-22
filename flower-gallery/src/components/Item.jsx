@@ -9,7 +9,7 @@ function Item({ name, url }) {
   );
 }
 
-Item.PropTypes = {
+Item.propTypes = {
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
 };
