@@ -7,14 +7,22 @@ import dataFlowers from "../data/flowers.json";
 
 function App() {
   const [flowers] = useState(dataFlowers);
+  const [filterTitle, setFilterTitle] = useState("");
 
-  console.log(flowers);
+  const handleFilterTitle = (filterValue) => {
+    setFilterTitle(filterValue);
+  };
+
+  const filteredFlowers = flowers.filter((flower) =>
+    flower.title.includes(filterTitle)
+  );
+
   return (
     <div className="app">
       <Header />
       <main>
-        <Form />
-        <List flowers={flowers} />
+        <Form handleFilterTitle={handleFilterTitle} />
+        <List flowers={filteredFlowers} />
       </main>
     </div>
   );
