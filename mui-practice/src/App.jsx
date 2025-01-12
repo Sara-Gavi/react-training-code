@@ -1,9 +1,10 @@
-import LoginForm from "./components/LoginForm";
+import { Button } from "@mui/material";
 
 function App() {
   return (
     <div>
-      <LoginForm />
+      <h1>App</h1>
+      <Button>Mi primer botón</Button>
     </div>
   );
 }
