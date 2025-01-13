@@ -1,4 +1,4 @@
-import { Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 
 function App() {
   return (
@@ -12,6 +12,18 @@ function App() {
         <Typography variant="body1" textAlign="center">
           Título 3
         </Typography>
+        <Box
+          sx={{
+            border: 2,
+            p: 5,
+            borderColor: "peru",
+            bgcolor: "#111",
+            color: "white",
+          }}
+          component="span"
+        >
+          Que hermoso es MUI
+        </Box>
         <Button variant="contained">Hello World</Button>
       </Container>
     </div>
