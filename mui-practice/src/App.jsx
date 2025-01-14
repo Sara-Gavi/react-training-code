@@ -1,4 +1,6 @@
 import { Box, Button, Container, Typography } from "@mui/material";
+import AddHomeWorkIcon from "@mui/icons-material/AddHomeWork";
+import BalanceIcon from "@mui/icons-material/Balance";
 
 function App() {
   return (
@@ -24,7 +26,16 @@ function App() {
         >
           Que hermoso es MUI
         </Box>
-        <Button variant="contained">Hello World</Button>
+        <Button
+          variant="contained"
+          color="error"
+          startIcon={<AddHomeWorkIcon />}
+        >
+          Hello World
+        </Button>
+        <Button variant="outlined" color="success" endIcon={<BalanceIcon />}>
+          Hello World
+        </Button>
       </Container>
     </div>
   );
