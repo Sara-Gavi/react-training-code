@@ -1,5 +1,12 @@
+import { Container } from "@mui/material";
+import Product from "./components/Product";
+
 function App() {
-  return <div></div>;
+  return (
+    <Container>
+      <Product />
+    </Container>
+  );
 }
 
 export default App;
