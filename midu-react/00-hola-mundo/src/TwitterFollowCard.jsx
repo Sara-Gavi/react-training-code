@@ -1,4 +1,4 @@
-function TwitterFollowCard({ userName, name, isFollowing }) {
+function TwitterFollowCard({ children, userName, isFollowing }) {
   return (
     <article className="tw-followCard">
       <header className="tw-followCard-header">
@@ -8,7 +8,7 @@ function TwitterFollowCard({ userName, name, isFollowing }) {
           src={`https://unavatar.io/${userName}`}
         />
         <div className="tw-followCard-info">
-          <strong>{name}</strong>
+          <strong>{children}</strong>
           <span className="tw-followCard-infoUserName">@{userName}</span>
         </div>
       </header>
